@@ -64,7 +64,7 @@ import {Loader, LoaderOptions} from 'google-maps';
    mounted() {
     var that = this
     that.$markers = [];
-	const loader = new Loader('AIzaSyBtgz114TP3HfAORu23of83ikmDuSEB_kc');
+	const loader = new Loader(process.env.VUE_APP_GOOGLE_API);
 	var mapStyles = [
 	    {
 	        "featureType": "administrative.locality",
