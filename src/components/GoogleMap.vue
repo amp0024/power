@@ -9,57 +9,33 @@ import Vue from 'vue';
 import {Loader, LoaderOptions} from 'google-maps';
  export default {
    props: {
-     'latitude': {
-       type: Number,
-       default() {
-         // return EventBus.sanfrancisco[0]
-         return 40.07276
-       }
-     },
-     'longitude': {
-       type: Number,
-       default() {
-         // return EventBus.sanfrancisco[1]
-         return -105.17287
-       }
-     },
-     'zoom': {
-       type: Number,
-       default() {
-         return 13
-       }
-     },
-     'mobile':{
-      type: Boolean,
-      default(){
-        return true
-      }
-     },
-     map:{
-     	type: Array,
-     	default(){
-     		return [
-				]
-     	}
-     },
-      display:{
-        type: Object
-      },
-      size: {
-        type: Number
-      },
-      locationDistance: {
-        required: false
-      },
-      updateBounds: {
-
-      },
-      selectedSegment: {
-
-      },
-      averageSegmant: {
-
-      }
+	'latitude': {
+		type: Number,
+		default() {
+		 return 40.07276
+		}
+	},
+		'longitude': {
+		type: Number,
+		default() {
+		 return -105.17287
+		}
+	},
+	'zoom': {
+		type: Number,
+		default() {
+		 return 13
+		}
+	},
+	map:{
+		type: Array,
+		default(){
+			return [
+			]
+		}
+	},
+	selectedSegment: {
+	}
    },
    mounted() {
     var that = this
@@ -325,9 +301,6 @@ import {Loader, LoaderOptions} from 'google-maps';
       map(){
         this.clearMarkers();
         this.buildMarkers();
-      },
-      updateBounds(){
-        this.$map.fitBounds(this.bounds);
       },
       selectedSegment(){
       	this.clearMarkers();
